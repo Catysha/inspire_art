@@ -1,9 +1,7 @@
-import React from "react";
+import React from 'react';
 
-interface Props {
-
-}
+interface Props {}
 
 export const SingleArtInfo = (props: Props) => {
-    return (<div>SingleArtInfo</div>)
-}
+  return <div>SingleArtInfo</div>;
+};

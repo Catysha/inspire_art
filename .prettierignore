@@ -1,0 +1,13 @@
+node_modules
+build
+dist
+
+package-lock.json
+yarn.lock
+
+*.log
+
+public/**/*.ico
+public/**/*.png
+public/**/*.jpg
+public/**/*.svg

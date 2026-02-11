@@ -1,9 +1,7 @@
-import React from "react";
+import React from 'react';
 
-interface Props {
-
-}
+interface Props {}
 
 export const Favorites = (props: Props) => {
-    return (<div>Favorites</div>)
-}
+  return <div>Favorites</div>;
+};
