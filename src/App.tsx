@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home/Home';
 import { Favorites } from './pages/Favorites/Favorites';
 import { SingleArtInfo } from './pages/SingleArtInfo/SingleArtInfo';
+import './App.css';
 
 function App() {
   return (

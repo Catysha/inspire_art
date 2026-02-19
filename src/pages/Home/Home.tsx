@@ -1,7 +1,13 @@
 import React from 'react';
+import { Header } from '../../components/Header';
+import { MainWrapper, Title } from '../styled';
 
-interface Props {}
-
-export const Home = (props: Props) => {
-  return <div>Home</div>;
+export const Home = () => {
+  return (
+    <>
+      <Header />
+      <MainWrapper>
+      </MainWrapper>
+    </>
+  );
 };
