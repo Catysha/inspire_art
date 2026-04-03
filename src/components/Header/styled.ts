@@ -3,7 +3,7 @@ import { colors } from '../../constants/colors';
 
 export const HeaderWrapper = styled.header`
   width: 100%;
-  background: ${colors.lightGrey};
+  background: ${colors.grey};
   position: relative;
 `;
 
