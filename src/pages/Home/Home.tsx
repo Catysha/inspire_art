@@ -1,8 +1,7 @@
 import React from 'react';
 import { Header } from '../../components/Header';
-import { MainWrapper, Title } from '../styled';
+import { MainWrapper } from '../styled';
 import { SearchInput } from '../../components/SearchInput';
-import { DescriptionCard } from '../../components/Cards/DescriptionCard';
 
 export const Home = () => {
   return (
@@ -10,7 +9,6 @@ export const Home = () => {
       <Header />
       <MainWrapper>
         <SearchInput />
-        <DescriptionCard />
       </MainWrapper>
     </>
   );
