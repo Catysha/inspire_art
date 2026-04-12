@@ -8,6 +8,7 @@ export const StatusWrapper = styled.div`
   height: 59px;
   background: ${colors.lightGrey};
   border-radius: 30px;
+  flex-shrink: 0;
 `;
 
 export const ImageButton = styled.img`

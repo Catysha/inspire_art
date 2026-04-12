@@ -1,7 +1,6 @@
-import { DescriptionContainer, LargeCardWrapper } from './styled';
-import { DescriptionCard } from '../DescriptionCard';
-import { Img } from './styled';
 import Art from '../../../assets/images/art.png';
+import { Img, LargeCardWrapper, DescriptionContainer } from './styled';
+import { DescriptionCard } from '../DescriptionCard';
 
 export const LargeCard = () => {
   return (
