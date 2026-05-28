@@ -20,11 +20,11 @@ export const PageButton = styled.button<{ $active?: boolean }>`
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-  background-color: ${props => (props.$active ? '#FB8C00' : 'transparent')};
-  color: ${props => (props.$active ? '#ffffff' : '#444444')};
+  background-color: ${(props) => (props.$active ? '#FB8C00' : 'transparent')};
+  color: ${(props) => (props.$active ? '#ffffff' : '#444444')};
 
   &:hover:not(:disabled) {
-    background-color: ${props => (props.$active ? '#E57C00' : '#f5f5f5')};
+    background-color: ${(props) => (props.$active ? '#E57C00' : '#f5f5f5')};
   }
 
   &:disabled {
@@ -55,4 +55,3 @@ export const Dots = styled.span`
   user-select: none;
   cursor: default;
 `;
-

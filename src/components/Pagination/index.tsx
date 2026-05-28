@@ -29,10 +29,7 @@ export const Pagination = ({ currentPage, totalPages, handleChangePage }: Pagina
 
   return (
     <PaginationWrapper>
-      <ArrowButton
-        disabled={currentPage === 1}
-        onClick={() => handleChangePage(currentPage - 1)}
-      >
+      <ArrowButton disabled={currentPage === 1} onClick={() => handleChangePage(currentPage - 1)}>
         &lt;
       </ArrowButton>
 
@@ -47,7 +44,7 @@ export const Pagination = ({ currentPage, totalPages, handleChangePage }: Pagina
           >
             {page}
           </PageButton>
-        )
+        ),
       )}
 
       <ArrowButton
