@@ -12,13 +12,13 @@ interface SmallCardProps {
 }
 
 export const SmallCard = ({
-                            id,
-                            imageUrl,
-                            title,
-                            artist,
-                            isFavorite,
-                            onToggleFavorite,
-                          }: SmallCardProps) => {
+  id,
+  imageUrl,
+  title,
+  artist,
+  isFavorite,
+  onToggleFavorite,
+}: SmallCardProps) => {
   return (
     <SmallCardWrapper as={Link} to={`/single-art-info/${id}`}>
       {imageUrl ? (

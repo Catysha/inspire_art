@@ -12,13 +12,13 @@ interface LargeCardProps {
 }
 
 export const LargeCard = ({
-                            id,
-                            imageUrl,
-                            title,
-                            artist,
-                            isFavorite,
-                            onToggleFavorite,
-                          }: LargeCardProps) => {
+  id,
+  imageUrl,
+  title,
+  artist,
+  isFavorite,
+  onToggleFavorite,
+}: LargeCardProps) => {
   return (
     <LargeCardWrapper as={Link} to={`/single-art-info/${id}`}>
       {imageUrl ? (

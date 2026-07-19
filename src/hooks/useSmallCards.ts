@@ -4,15 +4,11 @@ import { Artwork } from '../types/types';
 import { getSmallArtworks } from '../api/artic';
 
 export const useSmallArtworks = () => {
-  const [artworks, setArtworks] = useState<
-    Artwork[]
-  >([]);
+  const [artworks, setArtworks] = useState<Artwork[]>([]);
 
-  const [isLoading, setIsLoading] =
-    useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const [error, setError] =
-    useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let ignore = false;
@@ -21,19 +17,14 @@ export const useSmallArtworks = () => {
       try {
         setIsLoading(true);
 
-        const res =
-          await getSmallArtworks();
+        const res = await getSmallArtworks();
 
         if (!ignore) {
           setArtworks(res.data);
         }
       } catch (err) {
         if (!ignore) {
-          setError(
-            err instanceof Error
-              ? err.message
-              : 'Ошибка загрузки'
-          );
+          setError(err instanceof Error ? err.message : 'Ошибка загрузки');
         }
       } finally {
         if (!ignore) {

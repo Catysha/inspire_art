@@ -9,11 +9,7 @@ interface SmallCardsListProps {
   onToggleFavorite: (artwork: Artwork) => void;
 }
 
-export const SmallCardsList = ({
-                                 artworks,
-                                 isFavorite,
-                                 onToggleFavorite,
-                               }: SmallCardsListProps) => {
+export const SmallCardsList = ({ artworks, isFavorite, onToggleFavorite }: SmallCardsListProps) => {
   if (artworks.length === 0) return null;
 
   return (
