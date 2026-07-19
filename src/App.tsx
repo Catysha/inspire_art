@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/single-art-info" element={<SingleArtInfo />} />
+        <Route path="/single-art-info/:id" element={<SingleArtInfo />} />
       </Routes>
     </div>
   );

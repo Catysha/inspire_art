@@ -1,16 +1,25 @@
-import React from 'react';
 import HeartAdded from './../../assets/icons/heart_added.svg';
 import HeartNotAdded from './../../assets/icons/heart_not_added.svg';
 import { ImageButton, StatusWrapper } from './styled';
 
-export const SaveStatus = () => {
-  const [status, setStatus] = React.useState<boolean>(true);
+interface SaveStatusProps {
+  isFavorite: boolean;
+  onToggle: () => void;
+}
+
+export const SaveStatus = ({ isFavorite, onToggle }: SaveStatusProps) => {
   return (
     <StatusWrapper>
       <ImageButton
-        src={status ? HeartNotAdded : HeartAdded}
+        src={isFavorite ? HeartAdded : HeartNotAdded}
         alt="Status"
-        onClick={() => setStatus(!status)}
+        onClick={(e) => {
+          // Карточки кликабельны целиком (ведут на страницу работы),
+          // поэтому клик по сердечку не должен триггерить переход.
+          e.preventDefault();
+          e.stopPropagation();
+          onToggle();
+        }}
       />
     </StatusWrapper>
   );

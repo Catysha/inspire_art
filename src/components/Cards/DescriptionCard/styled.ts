@@ -8,9 +8,9 @@ export const CardDetails = styled.div`
 `;
 
 export const InfoWrapper = styled.div`
-  max-width: 100px;
-  min-width: 0;
-  margin-right: 17px;
+    width: 130px;
+    flex-shrink: 0;
+    margin-right: 17px;
   @media (min-width: 1024px) {
     max-width: 200px;
   }

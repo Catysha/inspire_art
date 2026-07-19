@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowButton, Dots, PageButton, PaginationWrapper } from './styled';
 
 interface PaginationProps {
@@ -9,17 +8,25 @@ interface PaginationProps {
 
 const getVisiblePages = (current: number, total: number) => {
   const pages: (number | string)[] = [];
+  const delta = 1; // сколько страниц показывать слева и справа от текущей
 
-  if (total <= 4) {
+  if (total <= 7) {
     for (let i = 1; i <= total; i++) pages.push(i);
     return pages;
   }
 
-  for (let i = 1; i <= 4; i++) pages.push(i);
+  const left = Math.max(2, current - delta);
+  const right = Math.min(total - 1, current + delta);
 
-  // Многоточие и последняя
-  if (total > 5) pages.push('...');
-  if (total > 4) pages.push(total);
+  pages.push(1);
+
+  if (left > 2) pages.push('...');
+
+  for (let i = left; i <= right; i++) pages.push(i);
+
+  if (right < total - 1) pages.push('...');
+
+  pages.push(total);
 
   return pages;
 };
@@ -29,9 +36,9 @@ export const Pagination = ({ currentPage, totalPages, handleChangePage }: Pagina
 
   return (
     <PaginationWrapper>
-      <ArrowButton disabled={currentPage === 1} onClick={() => handleChangePage(currentPage - 1)}>
-        &lt;
-      </ArrowButton>
+      {currentPage > 1 && (
+        <ArrowButton onClick={() => handleChangePage(currentPage - 1)}>&lt;</ArrowButton>
+      )}
 
       {visiblePages.map((page, index) =>
         page === '...' ? (
@@ -47,12 +54,9 @@ export const Pagination = ({ currentPage, totalPages, handleChangePage }: Pagina
         ),
       )}
 
-      <ArrowButton
-        disabled={currentPage === totalPages}
-        onClick={() => handleChangePage(currentPage + 1)}
-      >
-        &gt;
-      </ArrowButton>
+      {currentPage < totalPages && (
+        <ArrowButton onClick={() => handleChangePage(currentPage + 1)}>&gt;</ArrowButton>
+      )}
     </PaginationWrapper>
   );
 };

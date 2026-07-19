@@ -1,13 +1,38 @@
-import Art from '../../../assets/images/art.png';
-import { Img, LargeCardWrapper, DescriptionContainer } from './styled';
+import { Link } from 'react-router-dom';
+import { Img, ImagePlaceholder, LargeCardWrapper, DescriptionContainer } from './styled';
 import { DescriptionCard } from '../DescriptionCard';
 
-export const LargeCard = () => {
+interface LargeCardProps {
+  id: number | string;
+  imageUrl: string | null;
+  title: string;
+  artist: string;
+  isFavorite: boolean;
+  onToggleFavorite: () => void;
+}
+
+export const LargeCard = ({
+                            id,
+                            imageUrl,
+                            title,
+                            artist,
+                            isFavorite,
+                            onToggleFavorite,
+                          }: LargeCardProps) => {
   return (
-    <LargeCardWrapper>
-      <Img src={Art} alt="Art" />
+    <LargeCardWrapper as={Link} to={`/single-art-info/${id}`}>
+      {imageUrl ? (
+        <Img src={imageUrl} alt={title} />
+      ) : (
+        <ImagePlaceholder>Без картины</ImagePlaceholder>
+      )}
       <DescriptionContainer>
-        <DescriptionCard />
+        <DescriptionCard
+          title={title}
+          artist={artist}
+          isFavorite={isFavorite}
+          onToggleFavorite={onToggleFavorite}
+        />
       </DescriptionContainer>
     </LargeCardWrapper>
   );
