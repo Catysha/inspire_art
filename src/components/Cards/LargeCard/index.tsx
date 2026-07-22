@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Img, ImagePlaceholder, LargeCardWrapper, DescriptionContainer } from './styled';
 import { DescriptionCard } from '../DescriptionCard';
+import museumLogo from './../../assets/icons/museum.svg';
 
 interface LargeCardProps {
   id: number | string;

@@ -21,8 +21,8 @@ export const PageButton = styled.button<{ $active?: boolean }>`
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-  background-color: ${(props) => (props.$active ? '#FB8C00' : 'transparent')};
-  color: ${(props) => (props.$active ? '#ffffff' : `${colors.grey}`)};
+  background-color: ${(props) => (props.$active ? `${colors.grey}` : 'transparent')};
+  color: ${(props) => (props.$active ? `${colors.white}` : `${colors.darkGrey}`)};
 
   &:hover {
     background-color: ${(props) => (props.$active ? '#E57C00' : '#f5f5f5')};
@@ -30,8 +30,9 @@ export const PageButton = styled.button<{ $active?: boolean }>`
 `;
 
 export const ArrowButton = styled(PageButton)`
+    font-weight: 500;
   font-size: 18px;
-  color: ${colors.grey};
+  color: ${colors.darkGrey};
 `;
 
 export const Dots = styled.span`
@@ -40,8 +41,9 @@ export const Dots = styled.span`
   justify-content: center;
   min-width: 32px;
   height: 32px;
-  color: #444444;
+  color: ${colors.darkGrey};
   font-size: 18px;
   user-select: none;
   cursor: default;
+    font-weight: 500;
 `;

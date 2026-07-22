@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Header } from '../../components/Header';
 
-import { CardsGrid, FeedbackText, MainWrapper } from '../styled';
+import { CardsGrid, ContentWrapper, FeedbackText, LoaderWrapper, MainWrapper } from '../styled';
 
 import { SearchInput } from '../../components/SearchInput';
 import { LargeCard } from '../../components/Cards/LargeCard';
@@ -30,11 +30,6 @@ export const Home = () => {
 
   const handleChangePage = (nextPage: number) => {
     setPage(nextPage);
-
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
   };
 
   return (
@@ -44,16 +39,8 @@ export const Home = () => {
       <MainWrapper>
         <SearchInput value={query} onSearch={handleSearch} />
 
-        {isLoading && <FeedbackText>Загрузка...</FeedbackText>}
-
-        {!isLoading && error && <FeedbackText>Ошибка: {error}</FeedbackText>}
-
-        {!isLoading && !error && artworks.length === 0 && (
-          <FeedbackText>По запросу «{query}» ничего не найдено</FeedbackText>
-        )}
-
-        {!isLoading && !error && artworks.length > 0 && (
-          <>
+        <ContentWrapper>
+          {!error && artworks.length > 0 && (
             <CardsGrid>
               {artworks.map((artwork) => (
                 <LargeCard
@@ -67,14 +54,26 @@ export const Home = () => {
                 />
               ))}
             </CardsGrid>
+          )}
 
-            <Pagination
-              currentPage={page}
-              totalPages={totalPages}
-              handleChangePage={handleChangePage}
-            />
-          </>
-        )}
+          {isLoading && (
+            <LoaderWrapper>
+              <FeedbackText>Загрузка...</FeedbackText>
+            </LoaderWrapper>
+          )}
+
+          {!isLoading && error && <FeedbackText>Ошибка: {error}</FeedbackText>}
+
+          {!isLoading && !error && artworks.length === 0 && (
+            <FeedbackText>По запросу «{query}» ничего не найдено</FeedbackText>
+          )}
+      </ContentWrapper>
+
+        <Pagination
+          currentPage={page}
+          totalPages={totalPages}
+          handleChangePage={handleChangePage}
+        />
 
         <SmallCardsList
           artworks={smallArtworks}

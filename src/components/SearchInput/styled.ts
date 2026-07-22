@@ -7,7 +7,7 @@ export const SearchWrapper = styled.div`
 
 export const Title = styled.h1`
   font-size: 40px;
-  margin: 60px 0;
+  margin: 30px 0 50px 0;
 `;
 
 export const InputWrapper = styled.div`
