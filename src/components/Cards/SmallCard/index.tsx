@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Img, ImagePlaceholder, SmallCardWrapper } from './styled';
 import { DescriptionCard } from '../DescriptionCard';
+import museumLogo from '../../../assets/icons/museum.svg';
+import { ImgIcon } from './styled';
+import { useState } from 'react';
 
 interface SmallCardProps {
   id: number | string;
@@ -19,12 +22,15 @@ export const SmallCard = ({
   isFavorite,
   onToggleFavorite,
 }: SmallCardProps) => {
+  const [hasError, setHasError] = useState(false);
   return (
     <SmallCardWrapper as={Link} to={`/single-art-info/${id}`}>
-      {imageUrl ? (
-        <Img src={imageUrl} alt={title} />
+      {imageUrl && !hasError ? (
+        <Img src={imageUrl} alt={title} onError={() => setHasError(true)} />
       ) : (
-        <ImagePlaceholder>Без картины</ImagePlaceholder>
+        <ImagePlaceholder>
+          <ImgIcon src={museumLogo} alt="Museum" />
+        </ImagePlaceholder>
       )}
       <DescriptionCard
         title={title}

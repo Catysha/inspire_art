@@ -42,3 +42,8 @@ export const ImagePlaceholder = styled.div`
   color: ${colors.grey};
   font-size: 14px;
 `;
+
+export const ImgIcon = styled.img`
+  width: 120px;
+  height: 120px;
+`;

@@ -38,6 +38,6 @@ export const ImagePlaceholder = styled.div`
 `;
 
 export const ImgIcon = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 60px;
+  height: 60px;
 `;

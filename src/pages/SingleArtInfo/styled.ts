@@ -95,3 +95,20 @@ export const GreyText = styled.span`
   color: ${colors.grey};
   margin-right: 8px;
 `;
+
+export const ArtInfoPlaceholder = styled.div`
+  width: 100%;
+  min-height: 600px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: ${colors.lightGrey};
+  border-radius: 8px;
+`;
+
+export const ImgIcon = styled.img`
+  width: 200px;
+  height: 200px;
+`;

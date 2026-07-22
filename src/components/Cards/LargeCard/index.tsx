@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Img, ImagePlaceholder, LargeCardWrapper, DescriptionContainer } from './styled';
+import { Img, ImagePlaceholder, LargeCardWrapper, DescriptionContainer, ImgIcon } from './styled';
 import { DescriptionCard } from '../DescriptionCard';
-import museumLogo from './../../assets/icons/museum.svg';
+import museumLogo from './../../../assets/icons/museum.svg';
 
 interface LargeCardProps {
   id: number | string;
@@ -25,7 +25,9 @@ export const LargeCard = ({
       {imageUrl ? (
         <Img src={imageUrl} alt={title} />
       ) : (
-        <ImagePlaceholder>Без картины</ImagePlaceholder>
+        <ImagePlaceholder>
+          <ImgIcon src={museumLogo} alt="Museum" />
+        </ImagePlaceholder>
       )}
       <DescriptionContainer>
         <DescriptionCard
