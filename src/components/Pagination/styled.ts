@@ -30,7 +30,7 @@ export const PageButton = styled.button<{ $active?: boolean }>`
 `;
 
 export const ArrowButton = styled(PageButton)`
-    font-weight: 500;
+  font-weight: 500;
   font-size: 18px;
   color: ${colors.darkGrey};
 `;
@@ -45,5 +45,5 @@ export const Dots = styled.span`
   font-size: 18px;
   user-select: none;
   cursor: default;
-    font-weight: 500;
+  font-weight: 500;
 `;

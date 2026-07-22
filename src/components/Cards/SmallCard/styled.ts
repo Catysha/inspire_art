@@ -39,5 +39,5 @@ export const ImagePlaceholder = styled.div`
 
 export const ImgIcon = styled.img`
   width: 120px;
-    height: 120px;
+  height: 120px;
 `;

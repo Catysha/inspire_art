@@ -67,7 +67,7 @@ export const Home = () => {
           {!isLoading && !error && artworks.length === 0 && (
             <FeedbackText>По запросу «{query}» ничего не найдено</FeedbackText>
           )}
-      </ContentWrapper>
+        </ContentWrapper>
 
         <Pagination
           currentPage={page}
